@@ -1,4 +1,5 @@
 Informações no site:
-	- frequência;  
+	- frequência;
 	- localização;
 	- cadastro pra evitar dados incorretos;
+	-	Webscraping de dados da internet;
