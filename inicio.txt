@@ -1,0 +1,4 @@
+Informações no site:
+	- frequência;  
+	- localização;
+	- cadastro pra evitar dados incorretos;
