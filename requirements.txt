@@ -1,0 +1,15 @@
+Click==7.0
+Flask==1.0.2
+Flask-WTF==0.14.2
+itsdangerous==0.24
+Jinja2==2.10
+MarkupSafe==1.0
+pbr==4.3.0
+python-dotenv==0.9.1
+six==1.11.0
+stevedore==1.29.0
+virtualenv==16.0.0
+virtualenv-clone==0.3.0
+virtualenvwrapper==4.8.2
+Werkzeug==0.14.1
+WTForms==2.2.1
