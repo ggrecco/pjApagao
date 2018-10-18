@@ -14,4 +14,4 @@ def internal_error(error):
 
 # comentário para usar o git
 # comentário criado em casa w10
-# comentário criado com o vscode
+# comentário criado com o vscode duas vezes
