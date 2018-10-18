@@ -14,7 +14,7 @@ def before_request():
         db.session.commit()
 
 
-# página inicial
+# página inicial(boas vindas)
 @app.route('/')
 @app.route('/index')
 @login_required
@@ -81,6 +81,7 @@ def user(username):
     return render_template('user.html', user=user)
 
 
+# página de edição do perfil de usuário
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
