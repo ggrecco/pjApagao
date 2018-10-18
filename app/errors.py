@@ -12,6 +12,4 @@ def internal_error(error):
     db.session.rollback()
     return render_template('500.html'), 500
 
-# comentário para usar o git
-# comentário criado em casa w10
-# comentário criado com o vscode duas vezes
+# mais um comentário mas no notebook
