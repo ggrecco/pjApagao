@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Regisrar dados</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.frequency.label }}<br>
+            {{ form.frequency(size=32) }}<br>
+            <!-- {% for error in form.frequency.errors %}
+            <span style="color: red;">[ Deu ruim =( ]</span>
+            {% endfor %} -->
+        </p>
+        <p>
+            {{ form.city.label }}<br>
+            {{ form.city(size=32) }}<br>
+            {% for error in form.city.errors %}
+            <span style="color: red;">[ Deu ruim =( ]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

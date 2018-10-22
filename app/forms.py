@@ -34,3 +34,9 @@ class EditProfileForm(FlaskForm):
     username = StringField('Nome de usuário', validators=[DataRequired()])
     about_me = TextAreaField('Sobre mim.', validators=[Length(min=0, max=140)])
     submit = SubmitField('Enviar')
+
+
+class SendTackleFile(FlaskForm):
+    frequency = StringField('Frequência', validators=[DataRequired()])
+    city = StringField('Cidade', validators=[DataRequired()])
+    submit = SubmitField('Enviar')

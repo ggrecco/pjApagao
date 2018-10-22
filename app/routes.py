@@ -1,8 +1,8 @@
 from flask import render_template, flash, redirect, url_for, request
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, SendTackleFile
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User
+from app.models import User, Tackle
 from werkzeug.urls import url_parse
 from datetime import datetime
 
@@ -97,3 +97,18 @@ def edit_profile():
         form.about_me.data = current_user.about_me
     return render_template('edit_profile.html', title='Edit Profile',
                            form=form)
+
+
+# página para teste de envio tackle
+@app.route('/tackle', methods=['GET', 'POST'])
+@login_required
+def tackle():
+    form = SendTackleFile()
+    if form.validate_on_submit():
+        flash('O cadastro realizado com suceso!')
+        t = Tackle(frequency=form.frequency.data, city=form.city.data,
+                    user_id=current_user.id)
+        db.session.add(t)
+        db.session.commit()
+        return redirect(url_for('index'))
+    return render_template('tackle.html', title='Registrar Dados', form=form)
