@@ -35,8 +35,32 @@ class EditProfileForm(FlaskForm):
     about_me = TextAreaField('Sobre mim.', validators=[Length(min=0, max=140)])
     submit = SubmitField('Enviar')
 
+    def __init__(self, original_username, *args, **kwargs):
+        super(EditProfileForm, self).__init__(*args, **kwargs)
+        self.original_username = original_username
+
+    def validate_username(self, username):
+        if username.data != self.original_username:
+            user = User.query.filter_by(username=self.username.data).first()
+            if user is not None:
+                raise ValidationError('indisponível, seja gentil e tente outro.')
+
 
 class SendTackleFile(FlaskForm):
     frequency = StringField('Frequência', validators=[DataRequired()])
     city = StringField('Cidade', validators=[DataRequired()])
     submit = SubmitField('Enviar')
+
+class ResetPasswordRequestForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    submit = SubmitField('Redefinir Senha')
+
+
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField('Senha', validators=[DataRequired()])
+    password2 = PasswordField('Repita a senha', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Enviar senha')
+
+class ConfirmPasswordForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired, Email()])
+    submit = SubmitField('Confirmar')

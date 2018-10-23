@@ -4,7 +4,7 @@
       {% if title %}
       <title>{{ title }}</title>
       {% else %}
-      <title>...</title>
+      <title>PJ Apagão</title>
       {% endif %}
     </head>
     <body>
@@ -14,7 +14,7 @@
           {% if current_user.is_anonymous %}
           <a href="{{ url_for('login') }}">Login</a>
           {% else %}
-          <a href="{{ url_for('tackle') }}">Registrar</a>
+          <a href="{{ url_for('tackle') }}">Dados</a>
           <a href="{{ url_for('user', username=current_user.username) }}"> Perfil</a>
           <a href="{{ url_for('edit_profile') }}"> Editar Perfil</a>
           <a href="{{ url_for('logout') }}"> Logout( {{current_user.username}} )</a>
