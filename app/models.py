@@ -49,11 +49,11 @@ class User(UserMixin, db.Model):
             return
         return User.query.get(id)
 
-    # confirm e-mail
-    def get_email_token(self, expires_in=600):
-        return jwt.encode(
-            {'cofirm_email': self.id, 'exp': time() + expires_in},
-            app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
+    # # confirm e-mail
+    # def get_email_token(self, email, expires_in=600):
+    #     return jwt.encode(
+    #         {'cofirm_email': email, 'exp': time() + expires_in},
+    #         app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
 
     # vrifica o token do e-mail
     @staticmethod

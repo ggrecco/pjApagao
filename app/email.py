@@ -2,6 +2,8 @@ from flask import render_template
 from flask_mail import Message
 from app import mail, app
 from threading import Thread
+from time import time
+import jwt
 
 
 # enviar e-mail
@@ -30,12 +32,14 @@ def send_password_reset_email(user):
                                          user=user, token=token))
 
 # enviar confirmar email
-def send_confirm_email(user):
-    token = user.get_email_token()
+def send_confirm_email(user, email, password, expires_in=600):
+    token = jwt.encode({'confirm_email': email, 'exp': time() + expires_in},
+                       app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
+    
     send_email('[PJ-Apagão] Confirme seu e-mail',
                sender=app.config['ADMINS'][0],
-               recipients=[user.email],
+               recipients=[email],
                text_body=render_template('email/confirm_email.txt',
                                          user=user, token=token),
                html_body=render_template('email/confirm_email.html',
-                                         user=user, token=token))
+                                         user=user, email=email, password=password, token=token))

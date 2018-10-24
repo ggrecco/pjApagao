@@ -5,7 +5,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Tackle
 from werkzeug.urls import url_parse
 from datetime import datetime
-from app.email import send_password_reset_email
+from app.email import send_password_reset_email, send_confirm_email
 
 
 @app.before_request
@@ -59,17 +59,24 @@ def logout():
 
 
 # pagina de cadastro
+# falta adicionar: confirmar o cadastro enviar o token para o banco de dados
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data)
-        user.set_password(form.password.data)
-        db.session.add(user)
-        db.session.commit()
-        flash('Parabéns, agora você é um usuário registrado!')
+        # em vez de salvar no banco de dados envia os dados por e-mail para confirmação + token
+        # user = User(username=form.username.data, email=form.email.data)
+        # user.set_password(form.password.data)
+        # db.session.add(user)
+        # db.session.commit()
+        # flash('Parabéns, agora você é um usuário registrado!')
+        username=form.username.data
+        email=form.email.data
+        password=form.password.data
+        send_confirm_email(username, email, password)
+        flash('Verifique sua caixa de e-mails para confirmar seu cadastro')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
@@ -126,7 +133,7 @@ def reset_password_request():
         user = User.query.filter_by(email=form.email.data).first()
         if user:
             send_password_reset_email(user)
-        flash('verifique sea caixa de entrada do seu e-mail para trocar sua senha')
+        flash('verifique a caixa de entrada do seu e-mail.')
         return redirect(url_for('login'))
     return render_template('reset_password_request.html',
                            title='Redefinir Senha', form=form)
