@@ -1,0 +1,11 @@
+Caro {{ user.username }},
+
+Para redefinir sua senha, clique no seguinte link:
+
+{{ url_for('confirm', token=token, _external=True) }}
+
+Se você não solicitou uma redefinição de senha, simplesmente ignore esta mensagem
+
+Atenciosamente
+
+Equipe PJ-Apagão

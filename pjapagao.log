@@ -104,3 +104,5 @@ NameError: name 'User' is not defined
 2018-10-24 09:31:14,363 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
 2018-10-24 09:46:53,591 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
 2018-10-24 09:49:05,862 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-24 09:58:26,449 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-24 10:04:25,347 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
