@@ -1,4 +1,10 @@
-2018-10-24 11:34:33,196 ERROR: Exception on /register [POST] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
+2018-10-24 13:04:23,948 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-24 13:05:57,400 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-24 13:06:11,831 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-24 13:06:32,866 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-24 13:07:12,543 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-24 13:07:21,585 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-24 13:08:02,344 ERROR: Exception on /confirm_email/ggrecco/gustavo.grecco@hotmail.com/123/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb25maXJtX2VtYWlsIjoiZ3VzdGF2by5ncmVjY29AaG90bWFpbC5jb20iLCJleHAiOjE1NDAzOTc4NjEuMzc0MDU5N30.SfbqDK-rAUhdjmPwLCA8IU45WCRg_QiIj0nIzg_juVs [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,114 +18,7 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 78, in register
-    send_confirm_email(username, email, password)
-NameError: name 'send_confirm_email' is not defined
-2018-10-24 11:36:17,537 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-24 11:37:00,431 ERROR: Exception on /register [POST] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 78, in register
-    send_confirm_email(username, email, password)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/email.py", line 34, in send_confirm_email
-    token = get_email_token(email)
-NameError: name 'get_email_token' is not defined
-2018-10-24 12:04:05,841 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-24 12:04:37,085 ERROR: Exception on /register [POST] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 78, in register
-    send_confirm_email(username, email, password)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/email.py", line 35, in send_confirm_email
-    token = get_email_token(email)
-NameError: name 'get_email_token' is not defined
-2018-10-24 12:09:31,517 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-24 12:14:08,350 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-24 12:14:19,749 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-24 12:15:30,829 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-24 12:15:47,638 ERROR: Exception on /register [POST] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 78, in register
-    send_confirm_email(username, email, password)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/email.py", line 37, in send_confirm_email
-    app.config['SECRE_KEY'], algorithm='HS256').decode('utf-8')
-KeyError: 'SECRE_KEY'
-2018-10-24 12:16:16,300 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-24 12:16:27,246 ERROR: Exception on /register [POST] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 78, in register
-    send_confirm_email(username, email, password)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/email.py", line 43, in send_confirm_email
-    user=user, token=token),
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
-    context, ctx.app)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
-    rv = template.render(context)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/email/confirm_email.txt", line 5, in top-level template code
-    {{ url_for('confirm', token=token, _external=True) }}
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
-    force_external=external)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'confirm' with values ['token']. Did you mean 'confirm_email' instead?
-2018-10-24 12:18:18,805 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 157, in confirm_email
+    user.set_password(form.password.data)
+NameError: name 'form' is not defined
+2018-10-24 13:08:55,341 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]

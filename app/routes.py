@@ -66,12 +66,6 @@ def register():
         return redirect(url_for('index'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        # em vez de salvar no banco de dados envia os dados por e-mail para confirmação + token
-        # user = User(username=form.username.data, email=form.email.data)
-        # user.set_password(form.password.data)
-        # db.session.add(user)
-        # db.session.commit()
-        # flash('Parabéns, agora você é um usuário registrado!')
         username=form.username.data
         email=form.email.data
         password=form.password.data
@@ -151,12 +145,16 @@ def reset_password(token):
     if form.validate_on_submit():
         user.set_password(form.password.data)
         db.session.commit()
-        flash('Your password has been reset.')
+        flash('Senha redefinida com sucesso.')
         return redirect(url_for('login'))
     return render_template('reset_password.html', form=form)
 
 
 # confirmar e-mail
-@app.route('/confirm_email', methods=['GET', 'POST'])
-def confirm_email():
-    return render_template('confirm_email.html', title='Confirmação')
+@app.route('/confirm_email/<user>/<email>/<password>/<token>', methods=['GET', 'POST'])
+def confirm_email(user, email, password, token):            
+    user = User(username=user, email=email, token_hash=token)
+    user.set_password(password)
+    db.session.add(user)
+    db.session.commit()
+    return render_template('confirm_email.html', user=user, email=email, password=password, token=token,title='Confirmação')

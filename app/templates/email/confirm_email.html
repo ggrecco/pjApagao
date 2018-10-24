@@ -1,11 +1,11 @@
 <p> Caro {{user}}, </p>
 <p>Você realizou o pedido de cadastro com os seguintes dados:</p>
-<p>Usuário: {{user}}, </p>
+<p>Usuário: {{user}}</p>
 <p>E-mail: {{email}}</p> 
 <p>Senha: {{password}}</p> 
 <p>
      Para confirmar 
-     <a href="{{ url_for('confirm_email',user=user, email=email, password=password, token=token, _external=True) }}">
+     <a href="{{ url_for('confirm_email', user=user, email=email, password=password, token=token, _external=True) }}">
          Clique aqui
      </a>.
 </p>

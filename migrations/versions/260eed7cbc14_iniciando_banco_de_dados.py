@@ -1,8 +1,8 @@
-"""start Data Base
+"""iniciando banco de dados
 
-Revision ID: 1031a6f6a1cd
+Revision ID: 260eed7cbc14
 Revises: 
-Create Date: 2018-10-18 08:20:40.520667
+Create Date: 2018-10-24 13:06:32.973721
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '1031a6f6a1cd'
+revision = '260eed7cbc14'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -23,6 +23,7 @@ def upgrade():
     sa.Column('username', sa.String(length=64), nullable=True),
     sa.Column('email', sa.String(length=120), nullable=True),
     sa.Column('password_hash', sa.String(length=128), nullable=True),
+    sa.Column('token_hash', sa.String(length=300), nullable=True),
     sa.Column('about_me', sa.String(length=140), nullable=True),
     sa.Column('last_seen', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id')
