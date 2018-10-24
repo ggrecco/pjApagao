@@ -37,7 +37,7 @@ if not app.debug:
 
     if not os.path.exists('logs'):
         os.mkdir('logs')
-    file_handler = RotatingFileHandler('pjapagao.log', maxBytes=10240,
+    file_handler = RotatingFileHandler('logs/pjapagao.log', maxBytes=10240,
                                        backupCount=10)
     file_handler.setFormatter(logging.Formatter(
         '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
