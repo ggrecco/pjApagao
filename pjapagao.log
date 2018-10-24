@@ -98,3 +98,7 @@ Traceback (most recent call last):
     user = User.query.filter_by(username=username.data).first()
 NameError: name 'User' is not defined
 2018-10-23 19:13:39,495 INFO: Pjapagao startup [in C:\Users\gusta\OneDrive\Documentos\GitHub\pjApagao\app\__init__.py:48]
+2018-10-24 07:46:30,457 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-24 08:13:02,041 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-24 08:16:02,161 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-24 09:31:14,363 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]

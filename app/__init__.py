@@ -16,7 +16,7 @@ migrate = Migrate(app, db)
 login = LoginManager()
 login.init_app(app)
 login.login_view = "login"
-mail = Mail()
+mail = Mail(app)
 mail.init_app(app)
 
 if not app.debug:
