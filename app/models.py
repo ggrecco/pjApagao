@@ -76,7 +76,7 @@ class Tackle(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
-        return '<Tackle {}>'.format(self.body)
+        return '<Tackle {}>'.format(self.city)
 
 
 # carrega usuário pelo id

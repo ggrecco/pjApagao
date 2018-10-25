@@ -6,6 +6,7 @@ from app.models import User, Tackle
 from werkzeug.urls import url_parse
 from datetime import datetime
 from app.email import send_password_reset_email, send_confirm_email
+import json
 
 
 @app.before_request
@@ -115,6 +116,23 @@ def tackle():
         return redirect(url_for('index'))
     return render_template('tackle.html', title='Registrar Dados', form=form)
 
+
+# recebe os dados
+# @app.route('/tackle2/<dados>', methods=['GET', 'POST'])
+@app.route('/tackle2', methods=['GET', 'POST'])
+def tackle2():
+    # captura json com get
+    # page = requests.get("pagina http com json")
+    # d = page.json()
+
+    arquivo = open('../Pj_Apagao/app/dados.json', 'r')
+    dados = json.load(arquivo)
+    for i in dados['Dados']:
+        t = Tackle(frequency=str(i['frequencia']), city=str(i['cidade']), 
+                    user_id=current_user.id)
+        db.session.add(t)
+    db.session.commit()
+    return 'ok'
 
 
 # solicita resete de senha(user informa email)
