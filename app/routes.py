@@ -7,6 +7,7 @@ from werkzeug.urls import url_parse
 from datetime import datetime
 from app.email import send_password_reset_email, send_confirm_email
 import json
+import jwt
 
 
 @app.before_request
@@ -170,9 +171,15 @@ def reset_password(token):
 
 # confirmar e-mail
 @app.route('/confirm_email/<user>/<email>/<password>/<token>', methods=['GET', 'POST'])
-def confirm_email(user, email, password, token):            
-    user = User(username=user, email=email, token_hash=token)
-    user.set_password(password)
-    db.session.add(user)
-    db.session.commit()
+def confirm_email(user, email, password, token): 
+    # verifica a token 
+    try:  
+        vtoken = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])['confirm_email']
+        if vtoken == email:
+            user = User(username=user, email=email, token_hash=token)
+            user.set_password(password)
+            db.session.add(user)
+            db.session.commit()
+    except:
+        return 'ops! algo de errado não está certo'
     return render_template('confirm_email.html', user=user, email=email, password=password, token=token,title='Confirmação')
