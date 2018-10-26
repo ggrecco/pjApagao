@@ -64,7 +64,7 @@ class User(UserMixin, db.Model):
                             algorithms=['HS256'])['confirm_email']
         except:
             return
-        return User.query.get(id)
+        return 'ok'
 
 
 # armazena os dados enviados pelo hardware
