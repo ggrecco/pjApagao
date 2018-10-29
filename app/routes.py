@@ -174,8 +174,7 @@ def confirm_email(user, email, token):
     form = CreatePassword()
     if form.validate_on_submit():
         # verifica a token 
-        try: 
-            
+        try:             
             vtoken = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])['confirm_email']
             user = user
             email = email

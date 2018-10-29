@@ -93,3 +93,4 @@ Traceback (most recent call last):
     return getattr(obj, attribute)
 jinja2.exceptions.UndefinedError: 'app.forms.CreatePassword object' has no attribute 'password2'
 2018-10-29 08:41:59,339 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-29 10:57:14,908 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
