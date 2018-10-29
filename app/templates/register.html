@@ -18,20 +18,6 @@
             <span style="color: red;">[Campo Necessário ou e-mail já registrado]</span>
             {% endfor %}
         </p>
-        <p>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}<br>
-            {% for error in form.password.errors %}
-            <span style="color: red;">[Por favor, digite sua senha]</span>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.password2.label }}<br>
-            {{ form.password2(size=32) }}<br>
-            {% for error in form.password2.errors %}
-            <span style="color: red;">[As Senhas devem ser iguais]</span>
-            {% endfor %}
-        </p>
         <p>{{ form.submit() }}</p>
     </form>
 {% endblock %}

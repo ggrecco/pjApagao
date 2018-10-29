@@ -51,7 +51,6 @@ class User(UserMixin, db.Model):
         return User.query.get(id)
 
 
-
 # armazena os dados enviados pelo hardware
 class Tackle(db.Model):
     id = db.Column(db.Integer, primary_key=True)

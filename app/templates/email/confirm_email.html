@@ -2,15 +2,15 @@
 <p>Você realizou o pedido de cadastro com os seguintes dados:</p>
 <p>Usuário: {{user}}</p>
 <p>E-mail: {{email}}</p> 
-<p>Senha: {{password}}</p> 
+
 <p>
      Para confirmar 
-     <a href="{{ url_for('confirm_email', user=user, email=email, password=password, token=token, _external=True) }}">
+     <a href="{{ url_for('confirm_email', user=user, email=email, token=token, _external=True) }}">
          Clique aqui
      </a>.
 </p>
 <p> Como alternativa, você pode colar o seguinte link na barra de endereço do seu navegador: </p>
-<p> {{ url_for('confirm_email',user=user, email=email, password=password, token=token, _external=True) }} </p>
+<p> {{ url_for('confirm_email',user=user, email=email, token=token, _external=True) }} </p>
 <p> Se você não solicitou cadastro no site '' www.pjapagao.com.br '' , simplesmente ignore esta mensagem. </p>
 <p> Atenciosamente, </p>
 <p> Equipe do PJ-Apagão </p>

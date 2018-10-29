@@ -14,9 +14,6 @@ class LoginForm(FlaskForm):
 class RegistrationForm(FlaskForm):
     username = StringField('Nome de Usuário', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Senha', validators=[DataRequired()])
-    password2 = PasswordField(
-        'Repita a Senha', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Registrar')
 
     def validate_username(self, username):
@@ -56,7 +53,13 @@ class ResetPasswordRequestForm(FlaskForm):
     submit = SubmitField('Redefinir Senha')
 
 
+class CreatePassword(FlaskForm):
+    password = PasswordField('Senha', validators=[DataRequired()])
+    password2 = PasswordField('Repita a senha', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Enviar')
+
 class ResetPasswordForm(FlaskForm):
     password = PasswordField('Senha', validators=[DataRequired()])
     password2 = PasswordField('Repita a senha', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Enviar senha')
+

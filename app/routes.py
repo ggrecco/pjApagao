@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, url_for, request
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm, SendTackleFile, ResetPasswordRequestForm, ResetPasswordForm
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, SendTackleFile, ResetPasswordRequestForm, ResetPasswordForm, CreatePassword
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Tackle
 from werkzeug.urls import url_parse
@@ -70,8 +70,7 @@ def register():
     if form.validate_on_submit():
         username=form.username.data
         email=form.email.data
-        password=form.password.data
-        send_confirm_email(username, email, password)
+        send_confirm_email(username, email)
         flash('Verifique sua caixa de e-mails para confirmar seu cadastro')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
@@ -170,16 +169,23 @@ def reset_password(token):
 
 
 # confirmar e-mail
-@app.route('/confirm_email/<user>/<email>/<password>/<token>', methods=['GET', 'POST'])
-def confirm_email(user, email, password, token): 
-    # verifica a token 
-    try:  
-        vtoken = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])['confirm_email']
-        if vtoken == email:
-            user = User(username=user, email=email, token_hash=token)
-            user.set_password(password)
-            db.session.add(user)
-            db.session.commit()
-    except:
-        return 'ops! algo de errado não está certo'
-    return render_template('confirm_email.html', user=user, email=email, password=password, token=token,title='Confirmação')
+@app.route('/confirm_email/<user>/<email>/<token>', methods=['GET', 'POST'])
+def confirm_email(user, email, token): 
+    form = CreatePassword()
+    if form.validate_on_submit():
+        # verifica a token 
+        try: 
+            
+            vtoken = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])['confirm_email']
+            user = user
+            email = email
+            password = form.password.data
+            if vtoken == email:
+                user = User(username=user, email=email, token_hash=token)
+                user.set_password(password)
+                db.session.add(user)
+                db.session.commit()
+        except:
+            return 'ops! algo de errado não está certo'
+        return render_template('confirm_email.html', user=user, email=email, password=password,token=token,title='Confirmação')
+    return render_template('createPassword.html', form=form, user=user)

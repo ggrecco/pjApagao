@@ -32,7 +32,7 @@ def send_password_reset_email(user):
                                          user=user, token=token))
 
 # enviar confirmar email
-def send_confirm_email(user, email, password, expires_in=600):
+def send_confirm_email(user, email,  expires_in=600):
     token = jwt.encode({'confirm_email': email, 'exp': time() + expires_in},
                        app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
     
@@ -42,4 +42,4 @@ def send_confirm_email(user, email, password, expires_in=600):
                text_body=render_template('email/confirm_email.txt',
                                          user=user, token=token),
                html_body=render_template('email/confirm_email.html',
-                                         user=user, email=email, password=password, token=token))
+                                         user=user, email=email, token=token))

@@ -2,7 +2,7 @@ Caro {{ user.username }},
 
 Para redefinir sua senha, clique no seguinte link:
 
-{{ url_for('confirm_email', user=user, email=email, password=password, token=token, _external=True) }}"
+{{ url_for('confirm_email', user=user, email=email, token=token, _external=True) }}"
 
 Se você não solicitou uma redefinição de senha, simplesmente ignore esta mensagem
 
