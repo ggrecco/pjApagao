@@ -6,6 +6,7 @@ class Config(object):
     SECRET_KEY = 'you-shall-not-pass'
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    LANGUAGES = ['en', 'pt']
     MAIL_SERVER = 'mx1.hostinger.com.br' # 'smtp.gmail.com' 
     MAIL_PORT = 587 # 465
     MAIL_USE_TLS = 1

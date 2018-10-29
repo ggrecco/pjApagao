@@ -1,6 +1,7 @@
-from flask import render_template, flash, redirect, url_for, request
+from flask import render_template, flash, redirect, url_for, request, g
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm, SendTackleFile, ResetPasswordRequestForm, ResetPasswordForm, CreatePassword
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, SendTackleFile, \
+                      ResetPasswordRequestForm, ResetPasswordForm, CreatePassword
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Tackle
 from werkzeug.urls import url_parse
@@ -8,6 +9,7 @@ from datetime import datetime
 from app.email import send_password_reset_email, send_confirm_email
 import json
 import jwt
+from flask_babel import get_locale
 
 
 @app.before_request
@@ -15,6 +17,7 @@ def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
+    g.locale = str(get_locale())
 
 
 # página inicial(boas vindas)
@@ -22,7 +25,10 @@ def before_request():
 @app.route('/index')
 @login_required
 def index():
-    return render_template('index.html', title='PJA')
+    data = Tackle.query.all()
+    there_are_date = len(list(data)) 
+    return render_template('index.html', title='PJA', dados=data, 
+                            there_are_date=there_are_date)
 
 
 # página de loguin e formulário

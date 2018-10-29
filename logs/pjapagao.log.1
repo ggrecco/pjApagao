@@ -1,12 +1,6 @@
-2018-10-24 13:27:54,574 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-25 07:47:03,628 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-25 07:47:07,704 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-25 13:19:29,959 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-25 13:33:57,835 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-25 13:46:05,606 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-25 14:23:18,643 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-25 14:46:18,076 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-25 14:46:37,999 ERROR: Exception on /tackle2 [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
+2018-10-29 16:22:48,944 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-10-29 16:23:16,093 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-10-29 16:23:18,331 ERROR: Exception on /login [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -20,11 +14,44 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 127, in tackle2
-    arquivo = open('dados.json', 'r')
-FileNotFoundError: [Errno 2] No such file or directory: 'dados.json'
-2018-10-25 14:47:58,113 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-25 14:48:09,733 ERROR: Exception on /tackle2 [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 59, in login
+    return render_template('login.html', title='Sign In', form=form)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 36, in block "content"
+    {% block content %}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/ext.py", line 134, in _gettext_alias
+    return __context.call(__context.resolve('gettext'), *args, **kwargs)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/ext.py", line 140, in gettext
+    rv = __context.call(func, __string)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_babel/__init__.py", line 116, in <lambda>
+    lambda x: get_translations().ugettext(x),
+  File "/usr/lib/python3.6/gettext.py", line 445, in gettext
+    tmsg = self._catalog.get(message, missing)
+TypeError: unhashable type: 'list'
+2018-10-29 16:23:19,848 ERROR: Exception on /login [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -38,70 +65,40 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 128, in tackle2
-    dados = json.load(arquivo)
-NameError: name 'json' is not defined
-2018-10-25 14:48:33,327 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-26 08:48:36,579 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-26 08:49:16,173 ERROR: Exception on /confirm_email/ggrecco/gustavo.grecco@hotmail.com/123/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb25maXJtX2VtYWlsIjoiZ3VzdGF2by5ncmVjY29AaG90bWFpbC5jb20iLCJleHAiOjE1NDA1NTUxMjkuMTc3MDE1M30.9XpCrHGkZy4z8UlMZHoAKRJdJmu-KU6klnY8XtzHaTc [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 59, in login
+    return render_template('login.html', title='Sign In', form=form)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 174, in confirm_email
-    vtoken = verify_email_token(token)
-NameError: name 'verify_email_token' is not defined
-2018-10-26 08:54:35,394 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-26 09:00:58,067 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-26 09:01:05,781 ERROR: Exception on /confirm_email/ggrecco/gustavo.grecco@hotmail.com/123/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb25maXJtX2VtYWlsIjoiZ3VzdGF2by5ncmVjY29AaG90bWFpbC5jb20iLCJleHAiOjE1NDA1NTUxMjkuMTc3MDE1M30.9XpCrHGkZy4z8UlMZHoAKRJdJmu-KU6klnY8XtzHaTc [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 175, in confirm_email
-    vtoken = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])['confirm_email']
-NameError: name 'jwt' is not defined
-2018-10-26 09:01:54,049 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-26 09:01:58,948 ERROR: Exception on /confirm_email/ggrecco/gustavo.grecco@hotmail.com/123/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb25maXJtX2VtYWlsIjoiZ3VzdGF2by5ncmVjY29AaG90bWFpbC5jb20iLCJleHAiOjE1NDA1NTUxMjkuMTc3MDE1M30.9XpCrHGkZy4z8UlMZHoAKRJdJmu-KU6klnY8XtzHaTc [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 176, in confirm_email
-    vtoken = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])['confirm_email']
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jwt/api_jwt.py", line 105, in decode
-    self._validate_claims(payload, merged_options, **kwargs)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jwt/api_jwt.py", line 135, in _validate_claims
-    self._validate_exp(payload, now, leeway)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jwt/api_jwt.py", line 176, in _validate_exp
-    raise ExpiredSignatureError('Signature has expired')
-jwt.exceptions.ExpiredSignatureError: Signature has expired
-2018-10-26 09:10:34,530 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
-2018-10-29 08:22:39,417 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 36, in block "content"
+    {% block content %}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/ext.py", line 134, in _gettext_alias
+    return __context.call(__context.resolve('gettext'), *args, **kwargs)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/ext.py", line 140, in gettext
+    rv = __context.call(func, __string)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_babel/__init__.py", line 116, in <lambda>
+    lambda x: get_translations().ugettext(x),
+  File "/usr/lib/python3.6/gettext.py", line 445, in gettext
+    tmsg = self._catalog.get(message, missing)
+TypeError: unhashable type: 'list'

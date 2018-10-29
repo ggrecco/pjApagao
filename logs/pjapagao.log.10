@@ -1,0 +1,99 @@
+2018-10-29 08:24:07,869 ERROR: Exception on /confirm_email/ggrecco/gustavo.grecco@hotmail.com/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb25maXJtX2VtYWlsIjoiZ3VzdGF2by5ncmVjY29AaG90bWFpbC5jb20iLCJleHAiOjE1NDA4MTI4MTMuNjg5OTc1NX0.JxI9fuI6ozEEbL9XjZIZ85ZrSC5D6-7IFU1JotDnudg [POST] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 190, in confirm_email
+    return render_template('confirm_email.html', user=user, email=email, password=password,token=token,title='Confirmação')
+NameError: name 'password' is not defined
+2018-10-29 08:25:46,383 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-29 08:35:50,276 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-29 08:35:52,324 ERROR: Exception on /login [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 53, in login
+    return render_template('login.html', title='Sign In', form=form)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 33, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/login.html", line 15, in block "content"
+    {{ form.password.label }}<br>
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.LoginForm object' has no attribute 'password'
+2018-10-29 08:39:41,415 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-29 08:41:04,050 ERROR: Exception on /confirm_email/ggrecco/gustavo.grecco@hotmail.com/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb25maXJtX2VtYWlsIjoiZ3VzdGF2by5ncmVjY29AaG90bWFpbC5jb20iLCJleHAiOjE1NDA4MTM4MDMuMTc1NTk3fQ.1Xq50BuxDixkjDtKbPHEoDe72tcVJj25NF8-bD_ASQM [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 191, in confirm_email
+    return render_template('createPassword.html', form=form, user=user)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/createPassword.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 33, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/createPassword.html", line 16, in block "content"
+    {{ form.password2.label }}<br>
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.CreatePassword object' has no attribute 'password2'
+2018-10-29 08:41:59,339 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-29 10:57:14,908 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-29 11:53:13,965 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-29 12:52:28,061 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]
+2018-10-29 13:00:24,305 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:48]

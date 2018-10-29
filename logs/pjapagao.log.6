@@ -1,4 +1,4 @@
-2018-10-29 16:23:24,917 ERROR: Exception on /favicon.ico [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
+2018-10-29 15:53:45,519 ERROR: Exception on /favicon.ico [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
@@ -37,27 +37,36 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 84, in template
+    {% block content %}{% endblock %}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
   File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/404.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
-    {%- block html %}
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
-    {% block body -%}
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 36, in block "content"
-    {% block content %}
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/ext.py", line 134, in _gettext_alias
-    return __context.call(__context.resolve('gettext'), *args, **kwargs)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/ext.py", line 140, in gettext
-    rv = __context.call(func, __string)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_babel/__init__.py", line 116, in <lambda>
-    lambda x: get_translations().ugettext(x),
-  File "/usr/lib/python3.6/gettext.py", line 445, in gettext
-    tmsg = self._catalog.get(message, missing)
-TypeError: unhashable type: 'list'
-2018-10-29 16:23:41,543 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 84, in template
+    {% block content %}{% endblock %}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 543, in _generate
+    optimized=self.optimized)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/compiler.py", line 82, in generate
+    generator.visit(node)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/visitor.py", line 38, in visit
+    return f(node, *args, **kwargs)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/compiler.py", line 718, in visit_Template
+    self.fail('block %r defined twice' % block.name, block.lineno)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/compiler.py", line 315, in fail
+    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateAssertionError: block 'content' defined twice
+2018-10-29 15:54:21,939 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:61]
+2018-10-29 15:56:11,614 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:61]
+2018-10-29 16:05:54,752 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-10-29 16:08:27,683 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-10-29 16:08:51,286 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-10-29 16:13:17,734 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-10-29 16:13:55,827 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-10-29 16:14:19,531 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-10-29 16:15:32,584 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-10-29 16:20:06,743 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]

@@ -6,6 +6,9 @@ from flask_login import LoginManager
 from flask_mail import Mail
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
+from flask_moment import Moment
+from flask_babel import Babel
+from flask_bootstrap import Bootstrap
 import os
 
 
@@ -18,6 +21,15 @@ login.init_app(app)
 login.login_view = "login"
 mail = Mail(app)
 mail.init_app(app)
+bootstrap = Bootstrap(app)
+moment = Moment(app)
+babel = Babel(app)
+
+
+@babel.localeselector
+def get_locale():
+    return 'pt'
+        
 
 if not app.debug:
     if app.config['MAIL_SERVER']:

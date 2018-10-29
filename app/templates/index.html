@@ -1,7 +1,26 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block app_content %}
     <h1>Olá, {{ current_user.username }}!</h1>
     <h4>Seja Bem Vindo!</h4>
-
+{% if there_are_date != 0 %}
+    <table>
+        <thead>
+            <tr>
+                <th>Data do dado</th>
+                <th>Frequência</th>
+                <th>Cidade</th>
+            </tr>
+        </thead>
+        {% for dado in dados %}
+            <tr>
+                <td>{{ moment(dado.timestamp).fromNow() }}</td>
+                <td>{{ dado.frequency }}</td>
+                <td>{{ dado.city }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <h6>Não há dados</h6>
+{% endif %}
 {% endblock %}
