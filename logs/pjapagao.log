@@ -1,63 +1,19 @@
-2018-10-29 16:23:24,917 ERROR: Exception on /favicon.ico [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1791, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1774, in raise_routing_exception
-    raise request.routing_exception
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/ctx.py", line 336, in match_request
-    self.url_adapter.match(return_rule=True)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/werkzeug/routing.py", line 1581, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
+2018-11-01 08:18:59,715 ERROR: Exception on /tackle2/{"frequencia": "123", "cidade": "casa"} [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1713, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1644, in handle_http_exception
-    return handler(e)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/errors.py", line 7, in not_found_error
-    return render_template('404.html'), 404
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
-    context, ctx.app)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
-    rv = template.render(context)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/404.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
-    {%- block html %}
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
-    {% block body -%}
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 36, in block "content"
-    {% block content %}
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/ext.py", line 134, in _gettext_alias
-    return __context.call(__context.resolve('gettext'), *args, **kwargs)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/ext.py", line 140, in gettext
-    rv = __context.call(func, __string)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_babel/__init__.py", line 116, in <lambda>
-    lambda x: get_translations().ugettext(x),
-  File "/usr/lib/python3.6/gettext.py", line 445, in gettext
-    tmsg = self._catalog.get(message, missing)
-TypeError: unhashable type: 'list'
-2018-10-29 16:23:41,543 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 136, in tackle2
+    print(str(i['frequencia']), str(i['cidade']))
+TypeError: string indices must be integers
+2018-11-01 08:20:24,840 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-11-01 08:20:58,245 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]

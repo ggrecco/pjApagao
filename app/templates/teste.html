@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<h1>{{dicionario}}</h1>
+<a href="{{ url_for('tackle2', fjson=dicionario ) }}">enviar</a>
+{% endblock %}

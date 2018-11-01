@@ -1,30 +1,21 @@
-2018-10-29 16:22:35,612 ERROR: Exception on /favicon.ico [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1791, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1774, in raise_routing_exception
-    raise request.routing_exception
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/ctx.py", line 336, in match_request
-    self.url_adapter.match(return_rule=True)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/werkzeug/routing.py", line 1581, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
+2018-10-29 16:22:48,944 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-10-29 16:23:16,093 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-10-29 16:23:18,331 ERROR: Exception on /login [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1713, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1644, in handle_http_exception
-    return handler(e)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/errors.py", line 7, in not_found_error
-    return render_template('404.html'), 404
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 59, in login
+    return render_template('login.html', title='Sign In', form=form)
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
     context, ctx.app)
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
@@ -37,136 +28,77 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 41, in template
-    <div class="alert alert-info" role="alert">{{_({{ message }})}}</div>
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 1005, in render
-    return concat(self.root_render_func(self.new_context(vars)))
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/404.html", line 1, in top-level template code
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/login.html", line 1, in top-level template code
     {% extends "base.html" %}
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 36, in block "content"
+    {% block content %}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/ext.py", line 134, in _gettext_alias
+    return __context.call(__context.resolve('gettext'), *args, **kwargs)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/ext.py", line 140, in gettext
+    rv = __context.call(func, __string)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_babel/__init__.py", line 116, in <lambda>
+    lambda x: get_translations().ugettext(x),
+  File "/usr/lib/python3.6/gettext.py", line 445, in gettext
+    tmsg = self._catalog.get(message, missing)
+TypeError: unhashable type: 'list'
+2018-10-29 16:23:19,848 ERROR: Exception on /login [GET] [in /root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/routes.py", line 59, in login
+    return render_template('login.html', title='Sign In', form=form)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
   File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 41, in template
-    <div class="alert alert-info" role="alert">{{_({{ message }})}}</div>
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 268, in parse_block
-    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 243, in parse_with
-    drop_needle=True)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 213, in parse_if
-    'name:endif'))
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 199, in parse_for
-    body = self.parse_statements(('name:endfor', 'name:else'))
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 875, in subparse
-    add_data(self.parse_tuple(with_condexpr=True))
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 620, in parse_tuple
-    args.append(parse())
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 432, in parse_expression
-    return self.parse_condexpr()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 437, in parse_condexpr
-    expr1 = self.parse_or()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 450, in parse_or
-    left = self.parse_and()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 459, in parse_and
-    left = self.parse_not()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 470, in parse_not
-    return self.parse_compare()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 474, in parse_compare
-    expr = self.parse_math1()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 496, in parse_math1
-    left = self.parse_concat()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 507, in parse_concat
-    args = [self.parse_math2()]
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 517, in parse_math2
-    left = self.parse_pow()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 528, in parse_pow
-    left = self.parse_unary()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 547, in parse_unary
-    node = self.parse_postfix(node)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 676, in parse_postfix
-    node = self.parse_call(node)
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 790, in parse_call
-    args.append(self.parse_expression())
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 432, in parse_expression
-    return self.parse_condexpr()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 437, in parse_condexpr
-    expr1 = self.parse_or()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 450, in parse_or
-    left = self.parse_and()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 459, in parse_and
-    left = self.parse_not()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 470, in parse_not
-    return self.parse_compare()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 474, in parse_compare
-    expr = self.parse_math1()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 496, in parse_math1
-    left = self.parse_concat()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 507, in parse_concat
-    args = [self.parse_math2()]
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 517, in parse_math2
-    left = self.parse_pow()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 528, in parse_pow
-    left = self.parse_unary()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 546, in parse_unary
-    node = self.parse_primary()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 581, in parse_primary
-    node = self.parse_dict()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 661, in parse_dict
-    key = self.parse_expression()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 432, in parse_expression
-    return self.parse_condexpr()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 437, in parse_condexpr
-    expr1 = self.parse_or()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 450, in parse_or
-    left = self.parse_and()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 459, in parse_and
-    left = self.parse_not()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 470, in parse_not
-    return self.parse_compare()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 474, in parse_compare
-    expr = self.parse_math1()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 496, in parse_math1
-    left = self.parse_concat()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 507, in parse_concat
-    args = [self.parse_math2()]
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 517, in parse_math2
-    left = self.parse_pow()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 528, in parse_pow
-    left = self.parse_unary()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 546, in parse_unary
-    node = self.parse_primary()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 581, in parse_primary
-    node = self.parse_dict()
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/parser.py", line 662, in parse_dict
-    self.stream.expect('colon')
-  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/lexer.py", line 384, in expect
-    self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: expected token ':', got '}'
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/ggrecco/Documentos/Pj_Apagao/app/templates/base.html", line 36, in block "content"
+    {% block content %}
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/ext.py", line 134, in _gettext_alias
+    return __context.call(__context.resolve('gettext'), *args, **kwargs)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/jinja2/ext.py", line 140, in gettext
+    rv = __context.call(func, __string)
+  File "/root/.virtualenvs/pjApagao/lib/python3.6/site-packages/flask_babel/__init__.py", line 116, in <lambda>
+    lambda x: get_translations().ugettext(x),
+  File "/usr/lib/python3.6/gettext.py", line 445, in gettext
+    tmsg = self._catalog.get(message, missing)
+TypeError: unhashable type: 'list'

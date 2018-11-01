@@ -38,10 +38,8 @@ def login():
     if current_user.is_authenticated:
         # retorna para index caso usuáro logado
         return redirect(url_for('index'))
-
     # renderiza formulario de LoginForm
     form = LoginForm()
-
     # verifica formulário após submit
     if form.validate_on_submit():
         # recebe e filtra o usário
@@ -109,36 +107,46 @@ def edit_profile():
 
 
 # página para teste de envio tackle
-@app.route('/tackle', methods=['GET', 'POST'])
+@app.route('/teste', methods=['GET', 'POST'])
 @login_required
 def tackle():
+    dic = {} 
     form = SendTackleFile()
     if form.validate_on_submit():
-        flash('O cadastro realizado com suceso!')
-        t = Tackle(frequency=form.frequency.data, city=form.city.data,
-                    user_id=current_user.id)
-        db.session.add(t)
-        db.session.commit()
-        return redirect(url_for('index'))
+        # flash('O cadastro realizado com suceso!')
+        # t = Tackle(frequency=form.frequency.data, city=form.city.data,
+        #             user_id=current_user.id)
+        # db.session.add(t)
+        # db.session.commit()
+        # return redirect(url_for('index'))
+        dic['frequencia'] = form.frequency.data
+        dic['cidade'] = form.city.data 
+        j = json.dumps(dic)
+        return render_template('teste.html', dicionario=j)
     return render_template('tackle.html', title='Registrar Dados', form=form)
 
 
 # recebe os dados
-# @app.route('/tackle2/<dados>', methods=['GET', 'POST'])
-@app.route('/tackle2', methods=['GET', 'POST'])
-def tackle2():
+@app.route('/tackle2/<fjson>', methods=['GET', 'POST'])
+# @app.route('/tackle2', methods=['GET', 'POST'])
+def tackle2(fjson):
     # captura json com get
-    # page = requests.get("pagina http com json")
-    # d = page.json()
-
-    arquivo = open('../Pj_Apagao/app/dados.json', 'r')
-    dados = json.load(arquivo)
-    for i in dados['Dados']:
-        t = Tackle(frequency=str(i['frequencia']), city=str(i['cidade']), 
-                    user_id=current_user.id)
-        db.session.add(t)
-    db.session.commit()
-    return 'ok'
+    dados = json.loads(fjson)
+    print(type(dados['frequencia']))
+    print(dados['cidade'])
+    # 
+    # ou
+    # dados = requests.get("pagina http com json")
+    # d = dados.json()
+    # # ou
+    # arquivo = open('../Pj_Apagao/app/dados.json', 'r')
+    # dados = json.load(arquivo)
+    # for i in dados['Dados']:
+    #     t = Tackle(frequency=str(i['frequencia']), city=str(i['cidade']), 
+    #                 user_id=current_user.id)
+    #     db.session.add(t)
+    # db.session.commit()
+    return redirect(url_for('index'))
 
 
 # solicita resete de senha(user informa email)
