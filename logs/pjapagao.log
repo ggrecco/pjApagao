@@ -17,3 +17,6 @@ Traceback (most recent call last):
 TypeError: string indices must be integers
 2018-11-01 08:20:24,840 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
 2018-11-01 08:20:58,245 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-11-09 08:10:02,989 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-11-09 08:17:29,842 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
+2018-11-09 08:47:45,243 INFO: Pjapagao startup [in /home/ggrecco/Documentos/Pj_Apagao/app/__init__.py:60]
